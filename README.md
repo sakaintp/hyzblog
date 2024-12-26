@@ -3,8 +3,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 
 First, run the development server:
+## my deployment website
+https://hyzblog.vercel.app/
 
 ```bash
+nvm use 20.10.0
+
 npm run dev
 # or
 yarn dev
