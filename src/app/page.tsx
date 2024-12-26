@@ -18,6 +18,7 @@ export default function Home() {
           height={38}
           priority
         />
+        <div className="dark:text-fuchsia-900 text-red-900">text-foreground</div>
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             hello!welcome to hyzblog
