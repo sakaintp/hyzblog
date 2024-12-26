@@ -32,7 +32,7 @@ export default function RootLayout({
   //主题跟随系统
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e:any) => {
+    const handleChange = (e) => {
       console.log('夜间模式为', e.matches ? '深色模式' : '浅色模式');
       if (e.matches) {
         setTheme('dark'); // 系统为深色模式
@@ -48,7 +48,7 @@ export default function RootLayout({
       mediaQuery.removeEventListener('change',handleChange);
     };
   }, []);
-  
+
   return (
     <html lang="en" className={theme}>
       <body
