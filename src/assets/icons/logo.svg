@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BF360C" />  <!-- 更深的橙色 -->
+      <stop offset="100%" stop-color="#D35400" /><!-- 深橙色 -->
+    </linearGradient>
+    
+    <!-- 圆润效果滤镜 -->
+    <filter id="moreRounded" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="0.4" result="blur"/>
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 20 -4"
+        result="rounded"
+      />
+      <feMerge>
+        <feMergeNode in="rounded"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 主文本 -->
+  <text 
+    x="50%" 
+    y="50%" 
+    dominant-baseline="middle" 
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-weight="700"
+    font-size="48"
+    fill="url(#mainGradient)"
+    transform="skewX(-5)"
+    filter="url(#rounded)"
+    style="letter-spacing: 1px"
+  >
+    HYZ's BLOG
+  </text>
+  
+  <!-- 装饰线 -->
+  <line 
+    x1="70" 
+    y1="70" 
+    x2="230" 
+    y2="70" 
+    stroke="url(#mainGradient)" 
+    stroke-width="2"
+    stroke-linecap="round"
+    opacity="0.3"
+  />
+  
+  <style>
+    @keyframes slideIn {
+      from { transform: translateX(-10px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    text {
+      animation: slideIn 0.5s ease-out forwards;
+    }
+  </style>
+</svg>
