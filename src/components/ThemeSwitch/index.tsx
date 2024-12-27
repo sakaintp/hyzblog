@@ -3,10 +3,10 @@
 import { Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '@nextui-org/react'
 import { SunIcon, MoonIcon, MonitorIcon } from 'lucide-react'
 import { useEffect } from 'react'
-import { useThemeStore } from '@/store/useThemeStore'
+import { useThemeStore, type Theme} from '@/store/useThemeStore'
 
 export function ThemeSwitch() {
-  const { theme, setTheme} = useThemeStore()
+  const { theme, setTheme } = useThemeStore()
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as Theme || 'system'
