@@ -1,11 +1,8 @@
-'use client'
-
-// import type { Metadata } from "next";
-
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Providers} from "./providers";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,43 +14,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "hyzblog",
-//   description: "hyzblog",
-// };
+export const metadata: Metadata = {
+  title: "hyzblog",
+  description: "hyzblog",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [theme, setTheme] = useState('light'); // 初始设置为浅色模式
-
-  //主题跟随系统
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
-      console.log('夜间模式为', e.matches ? '深色模式' : '浅色模式');
-      if (e.matches) {
-        setTheme('dark'); // 系统为深色模式
-      } else {
-        setTheme('light'); // 系统为浅色模式
-      }
-    };
-    // 初始检查
-    handleChange(mediaQuery); 
-    // 监听系统颜色模式变化
-    mediaQuery.addEventListener('change',handleChange);
-    return () => {
-      mediaQuery.removeEventListener('change',handleChange);
-    };
-  }, []);
-
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" className={theme}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           {children}
         </Providers>
