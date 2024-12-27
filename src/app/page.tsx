@@ -1,6 +1,5 @@
 import {Button} from '@nextui-org/button'; 
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
 import Image from "next/image";
 
