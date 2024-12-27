@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { useThemeStore } from '@/store/useThemeStore'
 
 export function ThemeSwitch() {
-  const { theme, setTheme, getSystemTheme, updateDocumentTheme } = useThemeStore()
+  const { theme, setTheme} = useThemeStore()
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as Theme || 'system'
