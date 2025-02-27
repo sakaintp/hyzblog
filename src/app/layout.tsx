@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import "./styles/globals.scss";
 import {Providers} from "./providers";
 import React from 'react';
+import { ThemeSwitch } from "@/components/ThemeSwitch";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{overflow:'hidden'}}>
         <Providers>
           {children}
+          <div className="fixed top-4 right-4 z-50">
+            <ThemeSwitch />
+          </div>
         </Providers>
       </body>
     </html>

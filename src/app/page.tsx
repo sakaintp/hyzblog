@@ -28,11 +28,9 @@ export default function Home() {
         <div className="decor-line"></div>
       </div>
 
-      <div className="fixed top-4 right-4">
-        <ThemeSwitch />
-      </div>
+      
 
-      <div className="dark:text-fuchsia-900 text-red-900">test</div>
+      <div className="dark:text-fuchsia-900 text-red-900"></div>
 
       <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
         <li className="mb-2">
@@ -41,7 +39,7 @@ export default function Home() {
         <li>this is my practice project.</li>
       </ol>
 
-      <Button onPress={() => router.push('/main')}>Click me</Button>
+      <Button onPress={() => router.push('/home/chat')}>Click me</Button>
     </div>
   )
 }
