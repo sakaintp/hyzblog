@@ -21,6 +21,7 @@ export async function POST(req: Request) {
     const data = await response.json()
     return NextResponse.json({ message: data.choices[0].message.content })
   } catch (error) {
+    console.error('Chat completion request failed:', error)
     return NextResponse.json(
       { message: '请求失败，请稍后再试' },
       { status: 500 }

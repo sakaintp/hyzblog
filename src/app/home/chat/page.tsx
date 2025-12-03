@@ -44,6 +44,7 @@ export default function ChatPage() {
       const data = await response.json()
       setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
     } catch (error) {
+      console.error('Failed to send message', error)
       setMessages(prev => [...prev, { 
         role: 'assistant', 
         content: '抱歉，请求失败，请稍后再试'
