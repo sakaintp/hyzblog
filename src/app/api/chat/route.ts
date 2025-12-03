@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-    debugger
   const { messages } = await req.json()
-console.log(process.env.DEEPSEEK_API_KEY)
   try {
     // 这里替换为实际的DeepSeek API调用
     const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
